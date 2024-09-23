@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import { defineProps, ref, computed } from 'vue';
+import { ref, computed } from 'vue';
 
 const props = defineProps({
     job: Object,
@@ -12,7 +12,7 @@ const toggleFullDescription = () => {
     showFullDescription.value = !showFullDescription.value;
 };
 
-const trancatedDescription = computed(() => {
+const truncatedDescription = computed(() => {
     let description = props.job.description;
     if (!showFullDescription.value) {
         description = description.substring(0, 90) + '...';
@@ -31,7 +31,7 @@ const trancatedDescription = computed(() => {
 
             <div class="mb-5">
                 <div>
-                    {{ trancatedDescription }}
+                    {{ truncatedDescription }}
                 </div>
                 <button
                     @click="toggleFullDescription"

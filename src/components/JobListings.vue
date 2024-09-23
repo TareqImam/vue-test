@@ -2,10 +2,13 @@
 import { RouterLink } from 'vue-router';
 import JobListing from '@/components/JobListing.vue';
 import jobData from '@/jobs.json';
-import { ref, defineProps } from 'vue';
+import { ref } from 'vue';
 
-defineProps({
-    limit: Number,
+const props = defineProps({
+    limit: {
+        type: Number,
+        default: null,
+    },
     showButton: {
         type: Boolean,
         default: false,
