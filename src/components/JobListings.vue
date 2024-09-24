@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router';
 import JobListing from '@/components/JobListing.vue';
-import jobData from '@/jobs.json';
+import jobData from '@/jobs2.json';
 import { ref } from 'vue';
 
 const props = defineProps({
